@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const questions = [
   {
@@ -10,8 +10,8 @@ const questions = [
       "Good - I generally sleep well with occasional disturbances",
       "Fair - I have trouble sleeping sometimes",
       "Poor - I frequently have difficulty sleeping",
-      "Very Poor - I can hardly sleep at all"
-    ]
+      "Very Poor - I can hardly sleep at all",
+    ],
   },
   {
     id: 2,
@@ -20,8 +20,8 @@ const questions = [
       "Not at all",
       "Several days",
       "More than half the days",
-      "Nearly every day"
-    ]
+      "Nearly every day",
+    ],
   },
   {
     id: 3,
@@ -31,8 +31,8 @@ const questions = [
       "Low - I feel mostly calm",
       "Moderate - I feel some stress",
       "High - I feel very stressed",
-      "Very high - I feel overwhelmed"
-    ]
+      "Very high - I feel overwhelmed",
+    ],
   },
   {
     id: 4,
@@ -42,8 +42,8 @@ const questions = [
       "Occasionally",
       "Frequently",
       "Most of the time",
-      "Almost constantly"
-    ]
+      "Almost constantly",
+    ],
   },
   {
     id: 5,
@@ -53,9 +53,64 @@ const questions = [
       "Good - I can usually focus",
       "Fair - I sometimes have trouble focusing",
       "Poor - I often have difficulty concentrating",
-      "Very poor - I can hardly concentrate"
-    ]
-  }
+      "Very poor - I can hardly concentrate",
+    ],
+  },
+  {
+    id: 6,
+    text: "How often do you feel overwhelmed by your emotions?",
+    options: [
+      "Never - I manage my emotions well",
+      "Rarely - I usually handle them effectively",
+      "Sometimes - I occasionally feel overwhelmed",
+      "Often - I frequently struggle",
+      "Very often - I feel constantly overwhelmed",
+    ],
+  },
+  {
+    id: 7,
+    text: "How would you describe your energy levels throughout the day?",
+    options: [
+      "Very high - Consistently energetic",
+      "High - Generally good energy",
+      "Moderate - Some ups and downs",
+      "Low - Often tired",
+      "Very low - Constantly fatigued",
+    ],
+  },
+  {
+    id: 8,
+    text: "How often do you engage in activities you enjoy?",
+    options: [
+      "Daily",
+      "Several times a week",
+      "Once a week",
+      "Rarely",
+      "Never",
+    ],
+  },
+  {
+    id: 9,
+    text: "How would you rate your social connections and support system?",
+    options: [
+      "Very strong - Many close relationships",
+      "Strong - Good support system",
+      "Moderate - Some support",
+      "Weak - Limited support",
+      "Very weak - Feel isolated",
+    ],
+  },
+  {
+    id: 10,
+    text: "How often do you have difficulty making decisions?",
+    options: [
+      "Never - Very decisive",
+      "Rarely - Usually confident in decisions",
+      "Sometimes - Occasional uncertainty",
+      "Often - Frequent difficulty",
+      "Very often - Constant struggle with decisions",
+    ],
+  },
 ];
 
 const Questionnaire = () => {
@@ -70,7 +125,21 @@ const Questionnaire = () => {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      navigate('/result', { state: { answers: newAnswers } });
+      // Calculate score (0-4 scale per question, normalized to 1-10)
+      const totalScore = newAnswers.reduce(
+        (sum, answer) => sum + (4 - answer),
+        0
+      );
+      const normalizedScore = Math.round(
+        (totalScore / (questions.length * 4)) * 9 + 1
+      );
+
+      navigate("/result", {
+        state: {
+          answers: newAnswers,
+          score: normalizedScore,
+        },
+      });
     }
   };
 
@@ -81,7 +150,9 @@ const Questionnaire = () => {
       <div className="bg-white rounded-2xl shadow-lg p-8">
         <div className="mb-8">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-2xl font-semibold text-slate-800">Mental Health Assessment</h2>
+            <h2 className="text-2xl font-semibold text-slate-800">
+              Mental Health Assessment
+            </h2>
             <span className="text-sm text-slate-500">
               Question {currentQuestion + 1} of {questions.length}
             </span>
@@ -89,7 +160,9 @@ const Questionnaire = () => {
           <div className="w-full bg-gray-200 rounded-full h-2">
             <div
               className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
-              style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
+              style={{
+                width: `${((currentQuestion + 1) / questions.length) * 100}%`,
+              }}
             ></div>
           </div>
         </div>

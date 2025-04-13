@@ -1,3 +1,9 @@
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/clerk-react";
 import { Heart, Menu } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -24,18 +30,24 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <Link
-              to="/questionnaire"
-              className="text-slate-600 hover:text-indigo-600 transition"
-            >
-              Assessment
-            </Link>
-            <Link
-              to="/dashboard"
-              className="text-slate-600 hover:text-indigo-600 transition"
-            >
-              Resources
-            </Link>
+            <SignedIn>
+              <Link
+                to="/questionnaire"
+                className="text-slate-600 hover:text-indigo-600 transition"
+              >
+                Assessment
+              </Link>
+              <Link
+                to="/dashboard"
+                className="text-slate-600 hover:text-indigo-600 transition"
+              >
+                Resources
+              </Link>
+              <UserButton />
+            </SignedIn>
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
           </div>
 
           {/* Mobile Menu Button */}
@@ -59,20 +71,27 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <Link
-              to="/questionnaire"
-              className="block py-2 text-slate-600 hover:text-indigo-600"
-              onClick={() => setIsOpen(false)}
-            >
-              Assessment
-            </Link>
-            <Link
-              to="/dashboard"
-              className="block py-2 text-slate-600 hover:text-indigo-600"
-              onClick={() => setIsOpen(false)}
-            >
-              Resources
-            </Link>
+            <SignedIn>
+              <Link
+                to="/questionnaire"
+                className="block py-2 text-slate-600 hover:text-indigo-600"
+                onClick={() => setIsOpen(false)}
+              >
+                Assessment
+              </Link>
+              <Link
+                to="/dashboard"
+                className="block py-2 text-slate-600 hover:text-indigo-600"
+                onClick={() => setIsOpen(false)}
+              >
+                Resources
+              </Link>
+
+              <UserButton />
+            </SignedIn>
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
           </div>
         )}
       </div>
