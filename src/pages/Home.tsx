@@ -126,8 +126,8 @@ const Home = () => {
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-white rounded-xl p-6 shadow-md">
             <p className="text-slate-700 mb-4">
-              “MindfulMe helped me discover peace in the chaos of daily life.
-              The music therapy is a blessing!”
+              “Mental Health Adviser helped me discover peace in the chaos of
+              daily life. The music therapy is a blessing!”
             </p>
             <span className="text-sm text-slate-500 font-medium">
               — Ananya K.

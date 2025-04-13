@@ -1,5 +1,6 @@
 import { BookOpen, Brain, Music } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { recommendations } from "../utils/Result";
 
 interface LocationState {
   answers: number[];
@@ -20,53 +21,6 @@ const Result = () => {
 
   const state = getAssessmentState(score);
 
-  const recommendations = {
-    good: {
-      title: "You're in a Good Place!",
-      description:
-        "Your responses indicate a positive state of mental well-being. Keep maintaining these healthy practices!",
-      suggestions: [
-        "Continue daily meditation",
-        "Practice gratitude",
-        "Maintain your support system",
-      ],
-      color: "bg-green-50 text-green-800",
-    },
-    moderate: {
-      title: "You're Doing Okay, with Room for Growth",
-      description:
-        "While you're managing well, there's opportunity to strengthen your mental wellness practices.",
-      suggestions: [
-        "Try guided meditation",
-        "Explore music therapy",
-        "Practice mindful breathing",
-      ],
-      color: "bg-blue-50 text-blue-800",
-    },
-    concerning: {
-      title: "Let's Work on This Together",
-      description:
-        "Your responses suggest you're facing some challenges. We have tools and resources that can help.",
-      suggestions: [
-        "Start with gentle meditation",
-        "Listen to calming music",
-        "Practice daily affirmations",
-      ],
-      color: "bg-yellow-50 text-yellow-800",
-    },
-    critical: {
-      title: "We're Here to Support You",
-      description:
-        "Your responses indicate you're going through a difficult time. While exploring our resources, we strongly recommend reaching out to a mental health professional.",
-      suggestions: [
-        "Begin with basic breathing exercises",
-        "Try soothing music therapy",
-        "Connect with support groups",
-      ],
-      color: "bg-red-50 text-red-800",
-    },
-  };
-
   const result = recommendations[state];
 
   return (
@@ -83,6 +37,19 @@ const Result = () => {
           {result.title}
         </h2>
         <p className="text-lg text-slate-600 mb-8">{result.description}</p>
+
+        {result.issues.length > 0 && (
+          <div className="mb-8">
+            <h4 className="text-lg font-semibold text-slate-700 mb-2">
+              You might be experiencing:
+            </h4>
+            <ul className="list-disc list-inside text-slate-600 space-y-1">
+              {result.issues.map((issue, index) => (
+                <li key={index}>{issue}</li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           {result.suggestions.map((suggestion, index) => (
