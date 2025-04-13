@@ -1,4 +1,4 @@
-import { BookOpen, Brain, HeartPulse, Music, Smile } from 'lucide-react';
+import { BookOpen, Brain, HeartPulse, Music, Smile, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
@@ -37,14 +37,21 @@ const Dashboard = () => {
       icon: BookOpen,
       path: '/dashboard/shlokas',
       color: 'bg-red-50 text-red-600'
+    },
+    {
+      title: 'Daily Affirmations',
+      description: 'Uplift your spirit with positive thoughts and intentions',
+      icon: Sparkles,
+      path: '/dashboard/affirmations',
+      color: 'bg-pink-50 text-pink-600'
     }
   ];
 
   return (
     <div className="max-w-6xl mx-auto">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-slate-800 mb-4">Wellness Resources</h1>
-        <p className="text-xl text-slate-600">Explore our collection of tools and resources for your mental well-being</p>
+        <h1 className="text-4xl font-bold text-slate-800 mb-4">Mental health Advisor</h1>
+        <p className="text-xl text-slate-600">Because your mind matters</p>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

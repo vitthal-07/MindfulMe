@@ -1,7 +1,7 @@
 export const tracks = [
   {
     title: "Relaxation Soundscape",
-    artist: "Mental Health Adviser Studio",
+    artist: "Mental health Advisor Studio",
     mood: "Relaxing",
     src: "/music/relaxation-sound.mp3",
   },

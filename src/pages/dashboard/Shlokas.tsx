@@ -1,6 +1,6 @@
 import { BookOpen, RefreshCw } from "lucide-react";
 import { useState } from "react";
-import { fullAffirmations, fullShlokas } from "../../utils/Shlokas";
+import {  fullShlokas } from "../../utils/Shlokas";
 
 // Utility function to pick N random items from an array
 const getRandomItems = <T,>(array: T[], count: number): T[] => {
@@ -10,13 +10,9 @@ const getRandomItems = <T,>(array: T[], count: number): T[] => {
 
 const Shlokas = () => {
   const [shlokas, setShlokas] = useState(() => getRandomItems(fullShlokas, 3));
-  const [affirmations, setAffirmations] = useState(() =>
-    getRandomItems(fullAffirmations, 4)
-  );
-
+  
   const refreshContent = () => {
-    setShlokas(getRandomItems(fullShlokas, 3));
-    setAffirmations(getRandomItems(fullAffirmations, 4));
+    setShlokas(getRandomItems(fullShlokas, 7));
   };
 
   return (
@@ -67,25 +63,6 @@ const Shlokas = () => {
                   {shloka.translation}
                 </p>
                 <p className="text-slate-600">{shloka.meaning}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl shadow-lg p-8">
-          <h2 className="text-2xl font-semibold text-white mb-6">
-            Daily Affirmations
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {affirmations.map((affirmation, index) => (
-              <div
-                key={index}
-                className="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-white"
-              >
-                <span className="text-sm opacity-80 mb-2 block">
-                  {affirmation.category}
-                </span>
-                <p className="text-lg font-medium">{affirmation.text}</p>
               </div>
             ))}
           </div>

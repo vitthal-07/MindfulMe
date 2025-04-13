@@ -1,4 +1,4 @@
-import { BookOpen, Brain, Music } from "lucide-react";
+import { Brain } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { recommendations } from "../utils/Result";
 
@@ -62,32 +62,13 @@ const Result = () => {
         {state !== "good" && (
           <>
             <hr className="mb-6 border-slate-200" />
-            <h3 className="text-xl font-semibold text-slate-700 mb-4">
-              Let's get started with some helpful tools:
-            </h3>
-            <div className="flex flex-wrap gap-4">
-              <button
-                onClick={() => navigate("/dashboard/meditation")}
-                className="flex items-center px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
-              >
-                <Brain className="mr-2 h-5 w-5" />
-                Start Meditation
-              </button>
-              <button
-                onClick={() => navigate("/dashboard/music-therapy")}
-                className="flex items-center px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
-              >
-                <Music className="mr-2 h-5 w-5" />
-                Try Music Therapy
-              </button>
-              <button
-                onClick={() => navigate("/dashboard/shlokas")}
-                className="flex items-center px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
-              >
-                <BookOpen className="mr-2 h-5 w-5" />
-                Explore Shlokas
-              </button>
-            </div>
+            <button
+              onClick={() => navigate("/dashboard")}
+              className="flex items-center px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
+            >
+              <Brain className="mr-2 h-5 w-5" />
+              Get access to our tools
+            </button>
           </>
         )}
       </div>

@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Questionnaire from "./pages/Questionnaire";
 import Result from "./pages/Result";
 import PrivateRoute from "./components/PrivateRoute";
+import Affirmations from "./pages/dashboard/Affirmation";
 
 function App() {
   return (
@@ -80,6 +81,14 @@ function App() {
               element={
                 <PrivateRoute>
                   <Shlokas />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/dashboard/affirmations"
+              element={
+                <PrivateRoute>
+                  <Affirmations/>
                 </PrivateRoute>
               }
             />
