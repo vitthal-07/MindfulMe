@@ -1,5 +1,4 @@
-import React from 'react';
-import { Sun, Heart, Users } from 'lucide-react';
+import { Heart, Sun, Users } from 'lucide-react';
 
 const Depression = () => {
   const categories = [

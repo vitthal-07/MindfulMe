@@ -1,6 +1,5 @@
-import React from 'react';
+import { Heart, Space as Peace, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { Sparkles, Heart, Space as Peace } from 'lucide-react';
 
 const Home = () => {
   const navigate = useNavigate();

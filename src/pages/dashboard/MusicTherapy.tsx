@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Play, Pause, SkipForward, SkipBack, Volume2 } from 'lucide-react';
+import { Pause, Play, SkipBack, SkipForward, Volume2 } from 'lucide-react';
+import { useState } from 'react';
 
 const MusicTherapy = () => {
   const [currentTrack, setCurrentTrack] = useState(0);

@@ -1,6 +1,5 @@
-import React from 'react';
+import { BookOpen, Brain, HeartPulse, Music, Smile } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Brain, HeartPulse, Smile, Music, BookOpen } from 'lucide-react';
 
 const Dashboard = () => {
   const resources = [

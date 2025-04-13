@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Heart, Menu } from 'lucide-react';
+import { Heart, Menu } from "lucide-react";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -11,14 +11,31 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
             <Heart className="h-8 w-8 text-indigo-600" />
-            <span className="text-xl font-semibold text-slate-700">MindfulMe</span>
+            <span className="text-xl font-semibold text-slate-700">
+              MindfulMe
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            <Link to="/" className="text-slate-600 hover:text-indigo-600 transition">Home</Link>
-            <Link to="/questionnaire" className="text-slate-600 hover:text-indigo-600 transition">Assessment</Link>
-            <Link to="/dashboard" className="text-slate-600 hover:text-indigo-600 transition">Resources</Link>
+            <Link
+              to="/"
+              className="text-slate-600 hover:text-indigo-600 transition"
+            >
+              Home
+            </Link>
+            <Link
+              to="/questionnaire"
+              className="text-slate-600 hover:text-indigo-600 transition"
+            >
+              Assessment
+            </Link>
+            <Link
+              to="/dashboard"
+              className="text-slate-600 hover:text-indigo-600 transition"
+            >
+              Resources
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}

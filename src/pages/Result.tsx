@@ -1,6 +1,5 @@
-import React from 'react';
+import { BookOpen, Brain, Music } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Brain, Music, BookOpen } from 'lucide-react';
 
 interface LocationState {
   answers: number[];

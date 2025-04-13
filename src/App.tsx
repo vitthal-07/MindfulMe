@@ -1,15 +1,14 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Questionnaire from './pages/Questionnaire';
-import Result from './pages/Result';
 import Dashboard from './pages/Dashboard';
 import Anxiety from './pages/dashboard/Anxiety';
 import Depression from './pages/dashboard/Depression';
 import Meditation from './pages/dashboard/Meditation';
 import MusicTherapy from './pages/dashboard/MusicTherapy';
 import Shlokas from './pages/dashboard/Shlokas';
+import Home from './pages/Home';
+import Questionnaire from './pages/Questionnaire';
+import Result from './pages/Result';
 
 function App() {
   return (

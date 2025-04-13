@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Play, Pause, RefreshCw } from 'lucide-react';
+import { Pause, Play, RefreshCw } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const Meditation = () => {
   const [isRunning, setIsRunning] = useState(false);

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Wind, Sun, Moon } from 'lucide-react';
+import { Moon, Sun, Wind } from 'lucide-react';
 
 const Anxiety = () => {
   const breathingExercises = [

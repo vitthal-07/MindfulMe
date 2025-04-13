@@ -1,4 +1,3 @@
-import React from 'react';
 import { BookOpen, RefreshCw } from 'lucide-react';
 
 const Shlokas = () => {
