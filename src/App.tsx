@@ -11,6 +11,8 @@ import Questionnaire from "./pages/Questionnaire";
 import Result from "./pages/Result";
 import PrivateRoute from "./components/PrivateRoute";
 import Affirmations from "./pages/dashboard/Affirmation";
+import Overthinking from "./pages/dashboard/Overthinking";
+import Stress from "./pages/dashboard/Stress";
 
 function App() {
   return (
@@ -88,7 +90,24 @@ function App() {
               path="/dashboard/affirmations"
               element={
                 <PrivateRoute>
-                  <Affirmations/>
+                  <Affirmations />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path="/dashboard/overthinking"
+              element={
+                <PrivateRoute>
+                  <Overthinking />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/dashboard/stress"
+              element={
+                <PrivateRoute>
+                  <Stress />
                 </PrivateRoute>
               }
             />
