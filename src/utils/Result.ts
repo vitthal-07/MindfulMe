@@ -42,7 +42,7 @@ export const recommendations = {
     suggestions: [
       "Begin with basic breathing exercises",
       "Try soothing music therapy",
-      "Connect with support groups",
+      "Read daily affirmations",
     ],
     color: "bg-red-50 text-red-800",
     issues: ["Depression", "Severe anxiety", "Burnout", "Isolation"],
