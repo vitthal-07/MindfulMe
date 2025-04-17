@@ -1,5 +1,5 @@
 # Mental Health Advisor
-# Cntrubuters
+# Contributers
 ## Vitthal Biradar
 ## Sonali Patil
 ## Mayur Aghao
